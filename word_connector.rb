@@ -12,5 +12,13 @@ class WordConnector
     @lastword = @array_to_split.pop
   end
   
+  def convert
+    last_word
+    
+    @array_to_split.each do |a|
+      print "#{a}, "
+    end
+    print "and #{@lastword}"
+  end
   
 end
