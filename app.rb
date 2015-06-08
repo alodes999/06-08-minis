@@ -41,7 +41,6 @@ if choice.downcase == "pt"
   end
   
   trun1 = ParagraphTruncator.new(text, choice, trunc)
-  binding.pry
   puts "Our truncated message is:"
   puts trun1.truncate
   
