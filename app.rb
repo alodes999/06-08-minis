@@ -1,6 +1,10 @@
 # App.rb
 #
 # 
+require_relative "paragraph_truncator"
+require_relative "phone_number_format"
+require_relative "word_connector"
+
 
 choice_list = %w(pt pnf wc)
 puts "Which application would you like to use?"
@@ -22,7 +26,7 @@ if choice.downcase == "pt"
   choice = gets.chomp.to_i
   if choice == 0
     puts "Ok, we'll use a default of 25 characters"
-    choice = nil
+    choice = 25
   else
     puts "Ok, we'll truncate after #{choice} characters"
   end
@@ -31,12 +35,13 @@ if choice.downcase == "pt"
   trunc = gets.chomp
   if trunc == ""
     puts "Ok, we'll use the default of '...'"
-    trunc = nil
+    trunc = "..."
   else
     puts "Ok, we'll truncate using the #{trunc} message."
   end
   
   trun1 = ParagraphTruncator.new(text, choice, trunc)
+  binding.pry
   puts "Our truncated message is:"
   puts trun1.truncate
   
