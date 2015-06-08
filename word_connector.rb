@@ -15,10 +15,14 @@ class WordConnector
   def convert
     last_word
     
-    @array_to_split.each do |a|
-      print "#{a}, "
+    if @array_to_split.length == 1
+      print "#{@array_to_split[0]} and #{@lastword}"
+    else
+      @array_to_split.each do |a|
+        print "#{a}, "
+      end
+      print "and #{@lastword}"
     end
-    print "and #{@lastword}"
   end
   
 end
