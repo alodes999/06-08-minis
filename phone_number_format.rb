@@ -10,5 +10,22 @@ class PhoneNumberFormatter
   def initialize(phone_number_to_format)
     @phone_number_to_format = phone_number_to_format
   end
-  
+  # This method splits our phone number into parts of a string we can format.
+  #
+  # This method accepts no arguments
+  #
+  # This method returns the last 4 numbers of the phone number
+  def get_parts_to_format
+    @prefix = @phone_number_to_format.slice!(0..2)
+    @middle = @phone_number_to_format.slice!(0..2)
+    @end = @phone_number_to_format
+  end
+  # This method gives us our formatted phone number.
+  #
+  # This method accepts no arguments, only using the data we have
+  #
+  # This method returns the formatted phone number in a string. 
+  def format_number
+    formatted_number = "(#{@prefix}) #{@middle}-#{@end}"
+  end
 end
