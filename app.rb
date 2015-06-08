@@ -2,14 +2,14 @@
 #
 # 
 
-
+choice_list = %w(pt pnf wc)
 puts "Which application would you like to use?"
 puts "Please enter pt for paragraph truncator,"
 puts "Please enter pnf for phone number formatter,"
 puts "Please enter wc for word connector"
 choice = gets.chomp
 
-while choice != "pt" || "pnf" || "wc"
+while choice_list.include?(choice) == false
   puts "I didn't understand that answer, please try again."
   choice = gets.chomp
 end
@@ -20,7 +20,7 @@ if choice.downcase == "pt"
   
   puts "Is there a desired length to truncate to?"
   choice = gets.chomp.to_i
-  if choice = 0
+  if choice == 0
     puts "Ok, we'll use a default of 25 characters"
     choice = nil
   else
@@ -29,7 +29,7 @@ if choice.downcase == "pt"
   
   puts "Is there a way you'd like the truncator to show up?"
   trunc = gets.chomp
-  if trunc = ""
+  if trunc == ""
     puts "Ok, we'll use the default of '...'"
     trunc = nil
   else
