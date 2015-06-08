@@ -37,5 +37,4 @@ class WordConnector
       print "and #{@lastword}"
     end
   end
-  
 end
