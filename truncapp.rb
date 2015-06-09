@@ -1,5 +1,5 @@
 require_relative "paragraph_truncator"
-
+# User input and test case for ParagraphTruncator
 puts "Please enter a paragraph to truncate!"
 text = gets.chomp
 

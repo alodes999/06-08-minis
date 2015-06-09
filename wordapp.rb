@@ -1,5 +1,5 @@
 require_relative "word_connector"
-
+# Test cases for word_connector
 test = ["blue", "red", "green", "orange", "purple"]
 test2 = ["right", "left"]
 
