@@ -3,6 +3,7 @@
 # Should be able to take an argument to define X and also define an alternative set of characters for the ... (e.g. "Read More")
 
 class ParagraphTruncator
+  attr_reader :string_to_truncate, :length_of_trunc_text, :alternate_trunc
   # Our initialize method for ParagraphTruncator.  It has 3 arguments, 2 of which are set by default.
   # string_to_truncate is the words or paragraph we are going to truncate.  length_of_trunc_text is
   # an integer amount for how long of a string we want to have.  alternate_trunc is the string that
