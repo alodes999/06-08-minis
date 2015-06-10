@@ -2,6 +2,7 @@
 # Takes "1234567890"; returns "123-456-7890" or "(123) 456-7890".
 
 class PhoneNumberFormatter
+  attr_reader :phone_number_to_format, :prefix, :middle, :end
   # Our initialize method for PhoneNumberFormatter.  We pass a phone number as a string into the class. This string
   # is our 1 argument for this class
   # 
