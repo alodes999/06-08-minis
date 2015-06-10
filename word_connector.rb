@@ -3,6 +3,7 @@
 # Takes ["Blue", "Red"]; returns "Blue and Red".
 
 class WordConnector
+  attr_reader :lastword, :array_to_split
   # Our initialize method.  Has 1 argument, array_to_split that the program will split.
   #
   # Our objects will have one attribute initialized, and another set later in the program.  The
@@ -22,19 +23,35 @@ class WordConnector
   end
   # This method converts the array elements to a string, or connects it as the problem
   # wishes.  
-  # This method accepts no arguments, relying on our already set attributes
+  # This method accepts no arguments, relying on our already set attributes.  The outcome of the conditional
+  # sets which combine method is called
   #
   # This method returns our connected string of words from the initial array.
   def convert
     last_word
     
     if @array_to_split.length == 1
-      print "#{@array_to_split[0]} and #{@lastword}"
+      print_two_words
     else
-      @array_to_split.each do |a|
-        print "#{a}, "
-      end
-      print "and #{@lastword}"
+      print_multiple_words
     end
+  end
+  # This method converts two word arrays to the desired format.
+  #
+  # This takes no arguments.
+  #
+  # This returns the combined String with two parts
+  def print_two_words
+    "#{@array_to_split[0]} and #{@lastword}"
+  end
+  # This method converts multiple word arrays to the desired format.
+  #
+  # This takes no arguments.
+  #
+  # This returns the combined String in the proper format with multiple parts.
+  def print_multiple_words
+    text = @array_to_split.join(", ")
+    text += ", and #{@lastword}"
+    return text
   end
 end
